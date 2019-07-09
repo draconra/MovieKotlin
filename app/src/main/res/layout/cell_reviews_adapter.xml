@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/reviewsAdapterContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/generic_margin"
+        android:layout_marginEnd="@dimen/generic_margin"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@color/kinda_black"
+        android:textSize="@dimen/general_text_size"
+        tools:height="100dp"
+        tools:text="Video name" />
+
+
+    <TextView
+        android:id="@+id/reviewsAdapterAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewsAdapterContent"
+        tools:text="Author name" />
+
+</RelativeLayout>

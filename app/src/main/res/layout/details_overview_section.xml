@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/detailsOverviewSectionIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_bookmark_white_36dp"
+        android:tint="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailsOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:textColor="@color/details_text"
+        android:textSize="@dimen/general_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsOverviewSectionIcon"
+        tools:text="This is a sample overview.\nWith multiple lines of text." />
+
+    <TextView
+        android:id="@+id/detailsOverviewSectionTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/generic_margin"
+        android:text="@string/overview"
+        android:textColor="@color/kinda_black"
+        android:textSize="@dimen/general_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/detailsOverviewSectionIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detailsOverviewSectionIcon"
+        app:layout_constraintTop_toTopOf="@+id/detailsOverviewSectionIcon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

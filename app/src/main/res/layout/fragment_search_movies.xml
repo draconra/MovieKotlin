@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/searchMoviesEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:hint="@string/type_here_to_begin_your_search"
+        android:paddingStart="@dimen/generic_margin"
+        android:paddingLeft="@dimen/generic_margin"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/searchMoviesNoResultsMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/dark_grey"
+        android:textSize="@dimen/general_text_size"
+        android:visibility="gone"
+        tools:text="No results message"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchMoviesRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchMoviesEditText" />
+
+    <ProgressBar
+        android:id="@+id/searchMoviesProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
