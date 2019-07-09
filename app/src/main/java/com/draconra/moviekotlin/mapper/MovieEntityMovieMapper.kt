@@ -56,7 +56,7 @@ class MovieEntityMovieMapper @Inject constructor() : Mapper<MovieEntity, Movie>(
             details.genres = genres
         }
 
-        fromDetails.videoEntities?.let {
+        fromDetails.videos?.let {
             val videos = it.map { videoEntity ->
                 return@map Video(
                         id = videoEntity.id,
@@ -67,7 +67,7 @@ class MovieEntityMovieMapper @Inject constructor() : Mapper<MovieEntity, Movie>(
             details.videos = videos
         }
 
-        fromDetails.reviewEntities?.let {
+        fromDetails.reviews?.let {
             val reviews = it.map { reviewEntity ->
                 return@map Review(
                         id = reviewEntity.id,

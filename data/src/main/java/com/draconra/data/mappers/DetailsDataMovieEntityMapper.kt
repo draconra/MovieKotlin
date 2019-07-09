@@ -47,14 +47,14 @@ class DetailsDataMovieEntityMapper @Inject constructor() : Mapper<DetailsData, M
                 videoData.site.equals(VideoEntity.SOURCE_YOUTUBE) &&
                         videoData.type.equals(VideoEntity.TYPE_TRAILER) //TODO: remove from here?
             }?.map { videoData ->
-                        return@map VideoEntity(
-                                id = videoData.id,
-                                name = videoData.name,
-                                youtubeKey = videoData.key
-                        )
+                return@map VideoEntity(
+                        id = videoData.id,
+                        name = videoData.name,
+                        youtubeKey = videoData.key
+                )
 
-                    }
-            details.videoEntities = videosEntities
+            }
+            details.videos = videosEntities
         }
 
         from.reviews?.let {
@@ -66,7 +66,7 @@ class DetailsDataMovieEntityMapper @Inject constructor() : Mapper<DetailsData, M
                 )
             }
 
-            details.reviewEntities = reviewEntities
+            details.reviews = reviewEntities
         }
         movieEntity.details = details
         return movieEntity

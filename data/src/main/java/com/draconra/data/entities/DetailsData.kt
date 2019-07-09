@@ -15,10 +15,10 @@ data class DetailsData(
     @SerializedName("genres")
     var genres: List<GenreData>? = null,
 
-    @SerializedName("videoEntities")
+    @SerializedName("videos")
     var videos: VideoResult? = null,
 
-    @SerializedName("reviewEntities")
+    @SerializedName("reviews")
     var reviews: ReviewsResult? = null,
 
     @SerializedName("homepage")

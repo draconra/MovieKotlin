@@ -8,10 +8,10 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("movie/{id}?append_to_response=videoEntities,reviewEntities")
+    @GET("movie/{id}?append_to_response=videos,reviews")
     fun getMovieDetails(@Path("id") movieId: Int): Observable<DetailsData>
 
-    @GET("movie/popular") ///movie/now_playing
+    @GET("movie/popular")
     fun getPopularMovies(): Observable<MovieListResult>
 
     @GET("search/movie")

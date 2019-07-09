@@ -17,7 +17,7 @@ class VideosAdapter(private val videos: List<Video>, private val callback: (Vide
     }
 
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
-        holder?.bind(videos[position], callback)
+        holder.bind(videos[position], callback)
     }
 
     override fun getItemCount(): Int {

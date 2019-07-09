@@ -1,4 +1,4 @@
-package com.yossisegev.domain.common
+package com.draconra.domain.common
 
 import com.draconra.domain.model.MovieEntity
 import com.draconra.domain.model.MovieDetailsEntity
@@ -24,7 +24,7 @@ class DomainTestUtils {
             val movieEntity = getTestMovieEntity(id)
             movieEntity.details = MovieDetailsEntity(
                     overview = "Overview goes here $id",
-                    videoEntities = (0..2).map {
+                    videos = (0..2).map {
                         VideoEntity(
                                 "video-$it",
                                 "VideoEntity$it",
@@ -32,7 +32,7 @@ class DomainTestUtils {
                     },
                     homepage = "http://www.test.$id.org",
                     tagline = "I'm $id tag line!",
-                    reviewEntities = (0..4).map {
+                    reviews = (0..4).map {
                         ReviewEntity(
                                 "review-$it",
                                 "Author$it",

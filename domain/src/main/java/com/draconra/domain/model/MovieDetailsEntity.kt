@@ -10,7 +10,7 @@ data class MovieDetailsEntity(
         var runtime: Int? = null,
         var status: String? = null,
         var tagline: String? = null,
-        var reviewEntities: List<ReviewEntity>? = null,
-        var videoEntities: List<VideoEntity>? = null,
+        var reviews: List<ReviewEntity>? = null,
+        var videos: List<VideoEntity>? = null,
         var genres: List<GenreEntity>? = null
 )
