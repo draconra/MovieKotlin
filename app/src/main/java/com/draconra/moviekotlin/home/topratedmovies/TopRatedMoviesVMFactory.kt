@@ -3,7 +3,6 @@ package com.draconra.moviekotlin.home.topratedmovies
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.draconra.domain.common.Mapper
-import com.draconra.domain.interactor.GetPopularMovies
 import com.draconra.domain.interactor.GetTopRatedMovies
 import com.draconra.domain.model.MovieEntity
 import com.draconra.moviekotlin.model.Movie

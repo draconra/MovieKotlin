@@ -7,6 +7,7 @@ import com.draconra.moviekotlin.base.BaseActivity
 import com.draconra.moviekotlin.home.favorites.FavoriteMoviesFragment
 import com.draconra.moviekotlin.home.popularmovies.PopularMoviesFragment
 import com.draconra.moviekotlin.home.search.SearchFragment
+import com.draconra.moviekotlin.home.topratedmovies.TopRatedMoviesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 

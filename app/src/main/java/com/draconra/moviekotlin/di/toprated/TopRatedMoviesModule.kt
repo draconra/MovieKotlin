@@ -1,10 +1,10 @@
 package com.draconra.moviekotlin.di.toprated
 
-import com.draconra.domain.interactor.GetPopularMovies
-import com.draconra.moviekotlin.common.ASyncTransformer
-import com.draconra.moviekotlin.home.popularmovies.PopularMoviesVMFactory
-import com.draconra.moviekotlin.mapper.MovieEntityMovieMapper
+import com.draconra.domain.interactor.GetTopRatedMovies
 import com.draconra.domain.repositories.MoviesRepository
+import com.draconra.moviekotlin.common.ASyncTransformer
+import com.draconra.moviekotlin.home.topratedmovies.TopRatedMoviesVMFactory
+import com.draconra.moviekotlin.mapper.MovieEntityMovieMapper
 import dagger.Module
 import dagger.Provides
 
@@ -12,12 +12,12 @@ import dagger.Provides
 @Module
 class TopRatedMoviesModule {
     @Provides
-    fun provideGetPopularMoviesUseCase(moviesRepository: MoviesRepository): GetPopularMovies {
-        return GetPopularMovies(ASyncTransformer(), moviesRepository)
+    fun provideGetTopRatedMoviesUseCase(moviesRepository: MoviesRepository): GetTopRatedMovies {
+        return GetTopRatedMovies(ASyncTransformer(), moviesRepository)
     }
 
     @Provides
-    fun providePopularMoviesVMFactory(useCase: GetPopularMovies, mapper: MovieEntityMovieMapper): PopularMoviesVMFactory {
-        return PopularMoviesVMFactory(useCase, mapper)
+    fun provideTopRatedMoviesVMFactory(useCase: GetTopRatedMovies, mapper: MovieEntityMovieMapper): TopRatedMoviesVMFactory {
+        return TopRatedMoviesVMFactory(useCase, mapper)
     }
 }
