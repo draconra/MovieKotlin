@@ -8,14 +8,14 @@ import io.reactivex.Observable
 class MoviesRepositoryImpl(private val cachedDataStore: CachedMoviesDataStore,
                            private val remoteDataStore: RemoteMoviesDataStore) : MoviesRepository {
 
-    override fun getMovies(): Observable<List<MovieEntity>> {
+    override fun getMovies(type: String): Observable<List<MovieEntity>> {
 
         return cachedDataStore.isEmpty().flatMap { empty ->
             if (!empty) {
-                return@flatMap cachedDataStore.getMovies()
+                return@flatMap cachedDataStore.getMovies(type)
             }
             else {
-                return@flatMap remoteDataStore.getMovies()
+                return@flatMap remoteDataStore.getMovies(type)
                                               .doOnNext { movies ->
                                                   cachedDataStore.saveAll(movies)
                                               }
