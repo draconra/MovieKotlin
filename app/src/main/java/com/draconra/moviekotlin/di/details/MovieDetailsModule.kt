@@ -9,7 +9,7 @@ import com.draconra.moviekotlin.common.ASyncTransformer
 import com.draconra.moviekotlin.di.DI
 import com.draconra.moviekotlin.home.details.MovieDetailsVMFactory
 import com.draconra.moviekotlin.mapper.MovieEntityMovieMapper
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

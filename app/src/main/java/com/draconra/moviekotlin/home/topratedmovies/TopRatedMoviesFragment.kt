@@ -1,4 +1,4 @@
-package com.draconra.moviekotlin.home.popularmovies
+package com.draconra.moviekotlin.home.topratedmovies
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,28 +11,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.draconra.moviekotlin.R
 import com.draconra.moviekotlin.base.BaseFragment
 import com.draconra.moviekotlin.common.ImageLoader
-import com.draconra.moviekotlin.home.popularmovies.adapter.PopularMoviesAdapter
+import com.draconra.moviekotlin.home.topratedmovies.adapter.TopRatedMoviesAdapter
 import kotlinx.android.synthetic.main.fragment_popular_movies.*
 import javax.inject.Inject
 
 
-class PopularMoviesFragment : BaseFragment() {
+class TopRatedMoviesFragment : BaseFragment() {
 
     @Inject
-    lateinit var factory: PopularMoviesVMFactory
+    lateinit var factory: TopRatedMoviesVMFactory
     @Inject
     lateinit var imageLoader: ImageLoader
-    private lateinit var viewModel: PopularMoviesViewModel
-    private lateinit var popularMoviesAdapter: PopularMoviesAdapter
+    private lateinit var viewModel: TopRatedMoviesViewModel
+    private lateinit var topRatedMoviesAdapter: TopRatedMoviesAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getMovieApp().createPopularComponent().inject(this)
-        viewModel = ViewModelProviders.of(this, factory).get(PopularMoviesViewModel::class.java)
+        getMovieApp().createTopRatedComponent().inject(this)
+        viewModel = ViewModelProviders.of(this, factory).get(TopRatedMoviesViewModel::class.java)
 
         if (savedInstanceState == null) {
-            viewModel.getPopularMovies()
+            viewModel.getTopRatedMovies()
         }
     }
 
@@ -48,9 +48,9 @@ class PopularMoviesFragment : BaseFragment() {
         })
     }
 
-    private fun handleViewState(state: PopularMoviesViewState) {
+    private fun handleViewState(state: TopRatedMoviesViewState) {
         popularMoviesProgress.visibility = if (state.showLoading) View.VISIBLE else View.GONE
-        state.movieEntities?.let { popularMoviesAdapter.addMovies(it) }
+        state.movieEntities?.let { topRatedMoviesAdapter.addMovies(it) }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -59,16 +59,16 @@ class PopularMoviesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        popularMoviesAdapter = PopularMoviesAdapter(imageLoader) { movie, view ->
+        topRatedMoviesAdapter = TopRatedMoviesAdapter(imageLoader) { movie, view ->
             navigateToMovieDetailsScreen(movie)
         }
         recyclerView = popularMoviesRecycleView as RecyclerView
         recyclerView.layoutManager = GridLayoutManager(activity, 2)
-        recyclerView.adapter = popularMoviesAdapter
+        recyclerView.adapter = topRatedMoviesAdapter
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        getMovieApp().releasePopularComponent()
+        getMovieApp().releaseTopRatedComponent()
     }
 }

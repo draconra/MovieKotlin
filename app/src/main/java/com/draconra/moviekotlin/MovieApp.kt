@@ -14,6 +14,8 @@ import com.draconra.moviekotlin.di.popular.PopularMoviesModule
 import com.draconra.moviekotlin.di.popular.PopularSubComponent
 import com.draconra.moviekotlin.di.search.SearchMoviesModule
 import com.draconra.moviekotlin.di.search.SearchSubComponent
+import com.draconra.moviekotlin.di.toprated.TopRatedMoviesModule
+import com.draconra.moviekotlin.di.toprated.TopRatedSubComponent
 import com.squareup.leakcanary.LeakCanary
 
 class MovieApp: Application() {
@@ -21,6 +23,7 @@ class MovieApp: Application() {
     lateinit var appComponent: AppComponent
 
     private var popularMoviesComponent: PopularSubComponent? = null
+    private var topRatedMoviesComponent: TopRatedSubComponent? = null
     private var favoriteMoviesComponent: FavoritesSubComponent? = null
     private var movieDetailsComponent: MovieDetailsSubComponent? = null
     private var searchMoviesComponent: SearchSubComponent? = null
@@ -45,12 +48,20 @@ class MovieApp: Application() {
 
     }
 
-    fun createPopularComponenet(): PopularSubComponent {
+    fun createPopularComponent(): PopularSubComponent {
         popularMoviesComponent = appComponent.plus(PopularMoviesModule())
         return popularMoviesComponent!!
     }
     fun releasePopularComponent() {
         popularMoviesComponent = null
+    }
+
+    fun createTopRatedComponent(): TopRatedSubComponent {
+        topRatedMoviesComponent = appComponent.plus(TopRatedMoviesModule())
+        return topRatedMoviesComponent!!
+    }
+    fun releaseTopRatedComponent() {
+        topRatedMoviesComponent = null
     }
 
     fun createFavoritesComponent() : FavoritesSubComponent {

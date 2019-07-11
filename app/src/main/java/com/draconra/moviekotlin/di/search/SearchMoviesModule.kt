@@ -4,7 +4,7 @@ import com.draconra.domain.interactor.SearchMovie
 import com.draconra.moviekotlin.common.ASyncTransformer
 import com.draconra.moviekotlin.home.search.SearchVMFactory
 import com.draconra.moviekotlin.mapper.MovieEntityMovieMapper
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import dagger.Module
 import dagger.Provides
 
