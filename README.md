@@ -13,7 +13,7 @@ This app uses [The MovieDB public API](https://developers.themoviedb.org/3/getti
 Register (its free) and grab your API key, 
 then paste it inside: `.../res/values/api_key.xml`
 
-### //TODO: ###
+### TODO: ###
 - Add UI tests
 - Expand the app functionality
 - Using fastjson library
