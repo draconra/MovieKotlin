@@ -12,6 +12,8 @@ import com.draconra.moviekotlin.di.popular.PopularMoviesModule
 import com.draconra.moviekotlin.di.popular.PopularSubComponent
 import com.draconra.moviekotlin.di.search.SearchMoviesModule
 import com.draconra.moviekotlin.di.search.SearchSubComponent
+import com.draconra.moviekotlin.di.toprated.TopRatedMoviesModule
+import com.draconra.moviekotlin.di.toprated.TopRatedSubComponent
 import com.draconra.moviekotlin.home.popularmovies.PopularMoviesFragment
 import com.draconra.moviekotlin.home.details.MovieDetailsActivity
 import com.draconra.moviekotlin.home.favorites.FavoriteMoviesFragment
@@ -28,6 +30,7 @@ import javax.inject.Singleton
 
 interface AppComponent {
     fun plus(popularMoviesModule: PopularMoviesModule): PopularSubComponent
+    fun plus(topRatedMoviesModule: TopRatedMoviesModule): TopRatedSubComponent
     fun plus(favoriteMoviesModule: FavoriteModule): FavoritesSubComponent
     fun plus(movieDetailsModule: MovieDetailsModule): MovieDetailsSubComponent
     fun plus(searchMoviesModule: SearchMoviesModule): SearchSubComponent

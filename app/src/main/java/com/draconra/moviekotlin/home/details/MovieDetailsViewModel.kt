@@ -25,6 +25,7 @@ class MovieDetailsViewModel(private val getMovieDetails: GetMovieDetails,
     var viewState: MutableLiveData<MovieDetailsViewState> = MutableLiveData()
     var favoriteState: MutableLiveData<Boolean> = MutableLiveData()
     var errorState: SingleLiveEvent<Throwable> = SingleLiveEvent()
+    var favoriteButtonState: MutableLiveData<Boolean> = MutableLiveData()
 
     init {
         viewState.value = MovieDetailsViewState(isLoading = true)
@@ -64,6 +65,7 @@ class MovieDetailsViewModel(private val getMovieDetails: GetMovieDetails,
             }
         }.subscribe({ isFavorite ->
             favoriteState.value = isFavorite
+            favoriteButtonState.value = isFavorite
         }, {
             errorState.value = it
         }))

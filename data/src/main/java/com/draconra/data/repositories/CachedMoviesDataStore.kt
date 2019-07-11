@@ -16,7 +16,7 @@ class CachedMoviesDataStore(private val moviesCache: MoviesCache): MoviesDataSto
         return moviesCache.get(movieId)
     }
 
-    override fun getMovies(): Observable<List<MovieEntity>> {
+    override fun getMovies(type : String): Observable<List<MovieEntity>> {
         return moviesCache.getAll()
     }
 

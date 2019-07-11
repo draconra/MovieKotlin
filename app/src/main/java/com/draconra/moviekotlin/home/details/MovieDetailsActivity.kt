@@ -76,6 +76,7 @@ class MovieDetailsActivity : BaseActivity() {
     private fun observeViewState() {
         detailsViewModel.viewState.observe(this, Observer { viewState -> handleViewState(viewState) })
         detailsViewModel.favoriteState.observe(this, Observer { favorite -> handleFavoriteStateChange(favorite) })
+        detailsViewModel.favoriteButtonState.observe(this, Observer { favorite -> handleButtonFavoriteStateChange(favorite) })
         detailsViewModel.errorState.observe(this, Observer { throwable ->
             throwable?.let {
                 showToast(throwable.message ?: "")
@@ -132,6 +133,15 @@ class MovieDetailsActivity : BaseActivity() {
                     ContextCompat.getDrawable(this, R.drawable.ic_favorite_white_36dp)
                 else
                     ContextCompat.getDrawable(this, R.drawable.ic_favorite_border_white_36dp))
+    }
+
+    private fun handleButtonFavoriteStateChange(favorite: Boolean?) {
+        if (favorite == null) return
+       if(favorite){
+           showToast("Add to Favorite")
+       }else{
+           showToast("Remove from Favorite")
+       }
     }
 
     override fun onDestroy() {

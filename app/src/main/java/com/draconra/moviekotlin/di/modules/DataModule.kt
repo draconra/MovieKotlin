@@ -13,7 +13,7 @@ import com.draconra.data.repositories.MoviesRepositoryImpl
 import com.draconra.data.repositories.RemoteMoviesDataStore
 import com.draconra.domain.MoviesCache
 import com.draconra.moviekotlin.di.DI
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

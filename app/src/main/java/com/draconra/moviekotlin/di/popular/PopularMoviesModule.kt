@@ -4,7 +4,7 @@ import com.draconra.domain.interactor.GetPopularMovies
 import com.draconra.moviekotlin.common.ASyncTransformer
 import com.draconra.moviekotlin.home.popularmovies.PopularMoviesVMFactory
 import com.draconra.moviekotlin.mapper.MovieEntityMovieMapper
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import dagger.Module
 import dagger.Provides
 
