@@ -1,6 +1,7 @@
 package com.draconra.moviekotlin.home
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import com.draconra.moviekotlin.R
 import com.draconra.moviekotlin.base.BaseActivity
@@ -30,6 +31,11 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
         navigationBar.setOnNavigationItemSelectedListener(this)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if (item.itemId == navigationBar.selectedItemId) {
             return false
@@ -37,7 +43,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
         when (item.itemId) {
             R.id.action_popular -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, PopularMoviesFragment(), "popular")
+                        .replace(R.id.container, PopularMoviesFragment(), "home")
                         .commitNow()
                 title = getString(R.string.popular)
             }
@@ -59,4 +65,23 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_top_rated -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, TopRatedMoviesFragment(), "top_rated")
+                        .commitNow()
+                title = getString(R.string.top_rated)
+            }
+            R.id.action_popular -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, PopularMoviesFragment(), "popular")
+                        .commitNow()
+                title = getString(R.string.popular)
+            }
+            else -> {
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
