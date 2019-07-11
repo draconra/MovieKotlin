@@ -2,7 +2,7 @@ package com.draconra.domain.interactor
 
 import com.draconra.domain.common.Transformer
 import com.draconra.domain.model.MovieEntity
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import io.reactivex.Observable
 
 class SearchMovie(transformer: Transformer<List<MovieEntity>>,

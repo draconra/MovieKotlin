@@ -2,7 +2,7 @@ package com.draconra.data.repositories
 
 import com.draconra.domain.model.MovieEntity
 import com.draconra.domain.model.Optional
-import com.yossisegev.domain.MoviesRepository
+import com.draconra.domain.repositories.MoviesRepository
 import io.reactivex.Observable
 
 class MoviesRepositoryImpl(private val cachedDataStore: CachedMoviesDataStore,

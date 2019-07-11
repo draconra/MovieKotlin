@@ -11,8 +11,8 @@ interface ApiService {
     @GET("movie/{id}?append_to_response=videos,reviews")
     fun getMovieDetails(@Path("id") movieId: Int): Observable<DetailsData>
 
-    @GET("movie/popular")
-    fun getPopularMovies(): Observable<MovieListResult>
+    @GET("movie/{type}")
+    fun getTypeMovies(@Path("type") type: String): Observable<MovieListResult>
 
     @GET("search/movie")
     fun searchMovies(@Query("query") query: String): Observable<MovieListResult>

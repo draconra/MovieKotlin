@@ -1,4 +1,4 @@
-package com.draconra.moviekotlin.di.popular
+package com.draconra.moviekotlin.di.toprated
 
 import com.draconra.domain.interactor.GetPopularMovies
 import com.draconra.moviekotlin.common.ASyncTransformer
@@ -8,9 +8,9 @@ import com.draconra.domain.repositories.MoviesRepository
 import dagger.Module
 import dagger.Provides
 
-@PopularScope
+@TopRatedScope
 @Module
-class PopularMoviesModule {
+class TopRatedMoviesModule {
     @Provides
     fun provideGetPopularMoviesUseCase(moviesRepository: MoviesRepository): GetPopularMovies {
         return GetPopularMovies(ASyncTransformer(), moviesRepository)
